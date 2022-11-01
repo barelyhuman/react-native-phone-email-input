@@ -1,0 +1,59 @@
+{
+  "name": "@barelyhuman/react-native-phone-email-input",
+  "version": "0.1.0",
+  "description": "",
+  "bugs": "https://github.com/barelyhuman/react-native-phone-email-input/issues",
+  "repository": "barelyhuman/preact-native",
+  "license": "MIT",
+  "author": "barelyhuman <ahoy@barelyhuman.dev>",
+  "exports": {
+    "./*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "engines": {
+    "node": "^12 || ^14 || >=16"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "nuke": "find . -name 'node_modules' -type d -prune | xargs rm -rf",
+    "prepare": "tsc; husky install",
+    "example:start": "cd example;yarn start",
+    "example:ios": "cd example; yarn ios",
+    "example:android": "cd example; yarn android",
+    "fix": "npx prettier --write .",
+    "next": "bumpp --tag --commit",
+    "preversion": "tsc"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@barelyhuman/prettier-config",
+  "devDependencies": {
+    "@barelyhuman/prettier-config": "^1.1.0",
+    "bumpp": "^8.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-native": "^0.70.4",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "react-native": ">=0.65"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "react-native-country-picker-modal": "^2.0.0"
+  }
+}
